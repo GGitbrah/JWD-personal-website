@@ -1,0 +1,48 @@
+
+@media screen and (min-width: 800px){
+    .flex-container {
+        display: flex;
+    }    
+}
+/* this sets the maximum width to 1200px for ease of viewing on large screens*/
+.wrapper {
+    margin: auto;
+    max-width: 75rem;
+}
+
+
+
+main, header, section, footer {
+    margin:10px;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+main {
+    background-color: #000000;
+}
+
+.header-main {
+    background-color: #82E0AA;
+}
+
+.data-input {
+    background-color:#73c6b6 ;
+    flex: 0 1 300px;
+}
+
+.cards-output {
+    background-color: #bb8fce;
+    flex: 1;
+}
+
+.task-summary {
+    background-color: #ec7063;
+}
+
+.footer-main {
+    border: 1px solid #000000;
+    background-color: #99a3a4;
+    
+    
+}
