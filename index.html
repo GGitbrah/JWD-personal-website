@@ -1,189 +1,430 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Wireframe trial for project</title>
-</head>
+    <!-- Core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
 
-<body style="background-color: burlywood;">
-    <!--this contains the log in button and logo within its own container-->
-    <header>
-        <div class="container-sm pt-5">
-            <div class="row">
-                <div class="col">
-                    <!--put in flatmate duties logo (right aligned)-->
-                    <h1> Flatmate Duties</h1>
-                    <!--replace with logo-->
-                </div>
-            </div>
+    <!-- navbar -->  
+ <nav class="navbar fixed-top navbar-expand-lg fixed-top ">  
+    <a class="navbar-brand" href="#">Logo</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+    <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse " id="navbarSupportedContent">     <ul class="navbar-nav mr-4"> 
+   <li class="nav-item"> 
+    <a class="nav-link " data-value="contact" href="#">List</a>       </li> 
+   </ul> 
+   </div></nav>
+
+   <!-- header section -->
+   <header class="header">
+    <div class="overla">
+    <div class="container">
+        <div class="description">
+            <h1>    Hello ,Welcome To FlatBuddies!
+             <p>    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+         </p>   
+          <button class="btn btn-outline-secondary btn-lg">See more</button>   </h1>  
+         </div>
         </div>
+    </div>
     </header>
 
-    <!--this section includes 2 columns one for selecting task and one showing what you have to do-->
-    <section>
-        <div class="container-sm pt-3 pb-5">
-            <div class="row justify-content-between">
-                <div class="col-sm-3 border border-primary rounded"> 
-                    <!--column that holds user input-->
+    <!-- Task form -->
+        <div class="container">
+          <h4 class="text-red">Form</h4>
+          <div class="row justify-content-between">
+            <div class="col-sm-5 border border-primary rounded"> 
+                <!--column that holds user input-->
 
-                    <form>
-                        <!--input for user name-->
-                        <div class="form-group">
-                          <label for="assignTo">Assign to:</label>
-                          <input type="text" class="form-control" id="assignTo" name="assignTo">
-                        </div>
-                        
-                        <!--input for selecting area-->                    
-                        <div class="form-group">
-                             <label for="name">Select area (select one):</label>
-                              <select class="form-control" id="name" name="name">
-                                <option>kitchen</option>
-                                <option>bathroom</option>
-                                <option>laundry</option>
-                                <option>toilet</option>
-                                <option>bedroom</option>
-                                <option>living room</option>
-                                <option>Dining room</option>
-                                <option>Study</option>
-                                <option>Outside</option>   
-                              </select> 
-                        </div>
-
-                        <!-- input for description of task-->
-                        <div class="form-group">
-                            <label for="description">Description of task:</label>
-                            <textarea class="form-control" rows="5" id="description" name="description"></textarea>
-                        </div>
-  
-
-                        <!--Input for due date of activity-->
-                        <div class="form-group"> <!-- Date input -->
-                            <label class="control-label" for="dueDate">Date:</label>
-                            <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYY" type="text"/>
-                        </div>
-
-                        <!--input for statusA. Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE). -->
-                        <div class="form-group">
-                            <label for="status">Status:</label>
-                            <select class="form-control" id="status">
-                              <option>To do</option>
-                              <option>In progress</option>
-                              <option>Review</option>
-                              <option>Done</option>
-                            </select>
-                          </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
-                <!--Column that holds user output ie cards-->
-                
-
-
-    
-            <div class="col-8 border border-primary rounded ">
-                <div class="card-columns">
-                    <h1 class="display-4">My Tasks</h1>
-                    <div id="list-items">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                        <div class="card" ">                
-                            <div class="card-body">
-                                <h5 class="card-title">Name of Area</h5>
-                                <p class="card-text">description</p>
-                                <p class="card-text">Person</p>
-                                <p class="card-text">Due Date: Aug 20 - 2020</p>
-                                <span class="badge badge-primary">IN PROGRESS</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="card">                
-                            <div class="card-body">
-                                <h5 class="card-title">Kitchen</h5>
-                                <p class="card-text">Wash dishes</p>
-                                <p class="card-text">Santiago Carrillo</p>
-                                <p class="card-text">Due Date: Sep 20 - 2020</p>
-                                <span class="badge badge-success">DONE</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="card">                
-                            <div class="card-body">
-                                <h5 class="card-title">Bedroom</h5>
-                                <p class="card-text">Vacuum</p>
-                                <p class="card-text">Santiago Carrillo</p>
-                                <p class="card-text">Due Date: Feb 20 - 2021</p>
-                                <span class="badge badge-warning">PENDING</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="card">                
-                            <div class="card-body">
-                                <h5 class="card-title">Loungeroom</h5>
-                                <p class="card-text">Dust</p>
-                                <p class="card-text">Santiago Carrillo</p>
-                                <p class="card-text">Due Date: Aug 20 - 2020</p>
-                                <span class="badge badge-success">DONE</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="card">                
-                            <div class="card-body">
-                                <h5 class="card-title">Bathroom</h5>
-                                <p class="card-text">Clean toilet</p>
-                                <p class="card-text">Santiago Carrillo</p>
-                                <p class="card-text">Due Date: Oct 15 - 2020</p>
-                                <span class="badge badge-primary">IN PROGRESS</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                            </div>
-                        </div>
-                        <br />
-                    </li>
-                </ul>   
+                <form>
+                    <!--input for user name-->
+                    <div class="form-group">
+                      <label for="assignTo">Assign to:</label>
+                      <input type="text" class="form-control" id="assignTo" name="assignTo">
                     </div>
-                </div>
-            </div>
-     
+                    
+                    <!--input for selecting area-->                    
+                    <div class="form-group">
+                         <label for="name">Select area (select one):</label>
+                          <select class="form-control" id="name" name="name">
+                            <option>kitchen</option>
+                            <option>bathroom</option>
+                            <option>laundry</option>
+                            <option>toilet</option>
+                            <option>bedroom</option>
+                            <option>living room</option>
+                            <option>Dining room</option>
+                            <option>Study</option>
+                            <option>Outside</option>    
+                          </select> 
+                    </div>
+
+                    <!-- input for description of task-->
+                    <div class="form-group">
+                        <label for="description">Description of task:</label>
+                        <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+                    </div>
 
 
+                    <!--Input for due date of activity-->
+                    <div class="form-group"> <!-- Date input -->
+                        <label class="control-label" for="dueDate">Date:</label>
+                        <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYY" type="text"/>
+                    </div>
 
+                    <!--input for statusA. Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE). -->
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select class="form-control" id="status">
+                          <option>To do</option>
+                          <option>In progress</option>
+                          <option>Review</option>
+                          <option>Done</option>
+                        </select>
+                      </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
-               
-    </section>
+</div>
+<!-- List section -->
 
-    <!--The footer will include the link to the page containing the full record of all selected tasks by everybody-->
-    <footer>
-        <div class="container-sm pt-3">
-            <div class="row">
-                <div class="col">
-                    <!--input go to button on right side -->
-                </div>
+<section class="section">
+<div class="h-100 blog border border-dark" id="blog" style="background-color: #F97300">
+	<div class="container" style="min-height: 660px">
+    <div class="head-title d-flex align-items-center justify-content-between my-3">
+      <h4 class="text-red">Flatmates</h4>
+    </div>
+
+    <div class="container">
+      <div class="row border border-primary">
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">                
+              <div class="card-body">
+                  <h5 class="card-title">Task 2</h5>
+                  <p class="card-text">task 2 description</p>
+                  <p class="card-text">Santiago Carrillo</p>
+                  <p class="card-text">Due Date: Sep 20 - 2020</p>
+                  <span class="badge badge-success">DONE</span>
+                  <a href="#" class="btn btn-primary">Delete</a>
+              </div>
+          </div>
+          </div> 
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">                
+              <div class="card-body">
+                  <h5 class="card-title">Task 2</h5>
+                  <p class="card-text">task 2 description</p>
+                  <p class="card-text">Santiago Carrillo</p>
+                  <p class="card-text">Due Date: Sep 20 - 2020</p>
+                  <span class="badge badge-success">DONE</span>
+                  <a href="#" class="btn btn-primary">Delete</a>
+              </div>
+          </div>
+          </div>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">                
+              <div class="card-body">
+                  <h5 class="card-title">Task 2</h5>
+                  <p class="card-text">task 2 description</p>
+                  <p class="card-text">Santiago Carrillo</p>
+                  <p class="card-text">Due Date: Sep 20 - 2020</p>
+                  <span class="badge badge-success">DONE</span>
+                  <a href="#" class="btn btn-primary">Delete</a>
+              </div>
+          </div>
+          </div>
+      </div>
+      <div class="row border border-primary">
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">                
+              <div class="card-body">
+                  <h5 class="card-title">Task 2</h5>
+                  <p class="card-text">task 2 description</p>
+                  <p class="card-text">Santiago Carrillo</p>
+                  <p class="card-text">Due Date: Sep 20 - 2020</p>
+                  <span class="badge badge-success">DONE</span>
+                  <a href="#" class="btn btn-primary">Delete</a>
+              </div>
+          </div>
+          </div> 
+          <div class="col-sm"><div class="card" style="width: 18rem;">                
+            <div class="card-body">
+                <h5 class="card-title">Task 2</h5>
+                <p class="card-text">task 2 description</p>
+                <p class="card-text">Santiago Carrillo</p>
+                <p class="card-text">Due Date: Sep 20 - 2020</p>
+                <span class="badge badge-success">DONE</span>
+                <a href="#" class="btn btn-primary">Delete</a>
             </div>
         </div>
-    </footer>
+      </div>
+          <div class="col-sm"><div class="card" style="width: 18rem;">                
+            <div class="card-body">
+                <h5 class="card-title">Task 2</h5>
+                <p class="card-text">task 2 description</p>
+                <p class="card-text">Santiago Carrillo</p>
+                <p class="card-text">Due Date: Sep 20 - 2020</p>
+                <span class="badge badge-success">DONE</span>
+                <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+      </div>
+      </div>
+</div>
+  </div>
+</div>
+</section>
 
+    <!-- 
+    <div class="list-team-members">
+      <ul>
+        <li class="d-flex align-items-center mb-2 border border-primary">
+          <div class="cont-user-wrapper col-lg-3">
+            <div class="d-flex align-items-center  w-30">
+              
+              <div class="name ml-3">
+                <span class="font-weight-bold">Ilan Touri</span>
+              </div>
+            </div>
+          </div>
+          <div class="email col-lg-3">
+            <p>Task Area</p>
+          </div>
+          <div class="role text-center col-lg-2">
+            <p>Duties</p>
+          </div>
+          <div class="status text-center col-lg-2">
+            <span class="badge badge-success p-2">Activated</span>
+          </div>
+          <div class="action col-lg-2 text-center dropdown">
+            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon ion-android-settings"
+                style="font-size: 30px;color: #888888;"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+          <div class="cont-user-wrapper col-lg-3">
+            <div class="d-flex align-items-center  w-30">
+              <div class="name ml-3">
+                <span class="font-weight-bold">Leonie Adams</span>
+              </div>
+            </div>
+          </div>
+          <div class="email col-lg-3">
+            <p>Task Area</p>
+          </div>
+          <div class="role text-center col-lg-2">
+            <p>Duties</p>
+          </div>
+          <div class="status text-center col-lg-2">
+            <span class="badge badge-success p-2">Activated</span>
+          </div>
+          <div class="action col-lg-2 text-center dropdown">
+            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon ion-android-settings"
+                style="font-size: 30px;color: #888888;"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+          <div class="cont-user-wrapper col-lg-3">
+            <div class="d-flex align-items-center  w-30">
+              <div class="name ml-3">
+                <span class="font-weight-bold">Phil McCravings</span>
+              </div>
+            </div>
+          </div>
+          <div class="email col-lg-3">
+            <p>Task Area</p>
+          </div>
+          <div class="role text-center col-lg-2">
+            <p>Duties</p>
+          </div>
+          <div class="status text-center col-lg-2">
+            <span class="badge badge-warning p-2">Deactivated</span>
+          </div>
+          <div class="action col-lg-2 text-center dropdown">
+            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon ion-android-settings"
+                style="font-size: 30px;color: #888888;"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+          <div class="cont-user-wrapper col-lg-3">
+            <div class="d-flex align-items-center  w-30">
+              <div class="name ml-3">
+                <span class="font-weight-bold">Xavier Muchachos</span>
+              </div>
+            </div>
+          </div>
+          <div class="email col-lg-3">
+            <p>Task Area</p>
+          </div>
+          <div class="role text-center col-lg-2">
+            <p>Duties</p>
+          </div>
+          <div class="status text-center col-lg-2">
+            <span class="badge badge-success p-2">Activated</span>
+          </div>
+          <div class="action col-lg-2 text-center dropdown">
+            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon ion-android-settings"
+                style="font-size: 30px;color: #888888;"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+          <div class="cont-user-wrapper col-lg-3">
+            <div class="d-flex align-items-center  w-30">
+              <div class="name ml-3">
+                <span class="font-weight-bold">Sonny Day</span>
+              </div>
+            </div>
+          </div>
+          <div class="email col-lg-3">
+            <p>Task Area</p>
+          </div>
+          <div class="role text-center col-lg-2">
+            <p>Duties</p>
+          </div>
+          <div class="status text-center col-lg-2">
+            <span class="badge badge-success p-2">Activated</span>
+          </div>
+          <div class="action col-lg-2 text-center dropdown">
+            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><i class="icon ion-android-settings"
+                style="font-size: 30px;color: #888888;"></i></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <!-- 
+	<h1 class="text-center">Blog</h1>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-12">
+				<div class="card">
+					<div class="card-img">
+						<img src="images/posts/polit.jpg" class="img-fluid">
+					</div>
+					
+					<div class="card-body">
+					<h4 class="card-title">Post Title</h4>
+						<p class="card-text">
+							
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+					<div class="card-footer">
+						<a href="" class="card-link">Read more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-12">
+				<div class="card">
+					<div class="card-img">
+						<img src="images/posts/images.jpg" class="img-fluid">
+					</div>
+					
+					<div class="card-body">
+					   <h4 class="card-title">Post Title</h4>
+						<p class="card-text">
+							
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+					<div class="card-footer">
+						<a href="" class="card-link">Read more</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-12">
+				<div class="card">
+					<div class="card-img">
+						<img src="images/posts/imag2.jpg" class="img-fluid">
+					</div>
+					
+					<div class="card-body">
+					<h4 class="card-title">Post Title</h4>
+						<p class="card-text">
+							
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+					<div class="card-footer">
+						<a href="" class="card-link">Read more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+   
+-->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+
+    <script type="text/javascript" src='js/main.js'></script>
+    
+  </body>
 </html>
