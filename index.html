@@ -47,60 +47,64 @@
             <div class="col-sm-5 border border-primary rounded"> 
                 <!--column that holds user input-->
 
-                <form id="newForm">
-                    <!--input for user name-->
-                    <div class="form-group">
-                          <label for="newNameInput">Name:</label>
-                          <input type="text" class="form-control" id="newNameInput">
-                    </div>
+                <form id="taskForm">
+                  <!--input for user name-->
+                  <div class="form-group">
+                    <label for="assignTo">Assign to:</label>
+                    <input type="text" class="form-control" id="assignTo" name="assignTo">
+                  </div>
                     
-                    <!--input for selecting area-->                    
+                    <!--input for selecting area-->    
+
                     <div class="form-group">
-                         <label for="newSelectArea">Select Area:</label>
-                          <select class="form-control" id="newSelectArea">
-                            <option>kitchen</option>
-                            <option>bathroom</option>
-                            <option>laundry</option>
-                            <option>toilet</option>
-                            <option>bedroom</option>
-                            <option>living room</option>
-                            <option>Dining room</option>
-                            <option>Study</option>
-                            <option>Outside</option>    
-                          </select> 
-                    </div>
-  
+                     <label for="name">Select area (select one):</label>
+                      <select class="form-control" id="name" name="name">
+                        <option>kitchen</option>
+                        <option>bathroom</option>
+                        <option>laundry</option>
+                        <option>toilet</option>
+                        <option>bedroom</option>
+                        <option>living room</option>
+                        <option>Dining room</option>
+                        <option>Study</option>
+                        <option>Outside</option>    
+                      </select> 
+                </div>
+
                     <!-- input for description of task-->
+
+                <div class="form-group">
+                  <label for="description">Description of task:</label>
+                  <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+                </div>
+
+
+                   <!--Input for due date of activity-->
+
+                <div class="form-group"> <!-- Date input -->
+                  <label class="control-label" for="dueDate">Date:</label>
+                  <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYY" type="text"/>
+                </div>
+
+                     <!--input for status. Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE). -->
+                  
                     <div class="form-group">
-                        <label for="newDescription">Description of task:</label>
-                        <textarea class="form-control" rows="5" id="newDescription"></textarea>
-                    </div>
-  
-  
-                    <!--Input for due date of activity-->
-                    <div class="form-group"> <!-- Date input -->
-                        <label for="newDueDate">Date:</label>
-                        <input type="date" class="form-control" id="newDueDate" placeholder="MM/DD/YYY">
-                    </div>
-  
-                    <!--input for statusA. Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE). -->
-                    <div class="form-group">
-                          <label for="newStatus">Status:</label>
-                          <select class="form-control" id="newStatus">
-                              <option>To do</option>
-                              <option>In progress</option>
-                              <option>Review</option>
-                              <option>Done</option>
-                        </select>
-                      </div>
-                      <div id="alertMessage" style="display: none" class="alert alert-danger" role="alert">
-                          Error message    
-                          </div>
-                          <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+                    <label for="status">Status:</label>
+                    <select class="form-control" id="status" name="status">
+                      <option>To do</option>
+                      <option>In progress</option>
+                      <option>Review</option>
+                      <option>Done</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div id="errorMessage">
+                </div>
             </div>
         </div>
-  </div>
+</div>
 <!-- List section -->
 
 <section class="section">
@@ -190,228 +194,8 @@
 </div>
 </section>
 
-    <!-- 
-    <div class="list-team-members">
-      <ul>
-        <li class="d-flex align-items-center mb-2 border border-primary">
-          <div class="cont-user-wrapper col-lg-3">
-            <div class="d-flex align-items-center  w-30">
-              
-              <div class="name ml-3">
-                <span class="font-weight-bold">Ilan Touri</span>
-              </div>
-            </div>
-          </div>
-          <div class="email col-lg-3">
-            <p>Task Area</p>
-          </div>
-          <div class="role text-center col-lg-2">
-            <p>Duties</p>
-          </div>
-          <div class="status text-center col-lg-2">
-            <span class="badge badge-success p-2">Activated</span>
-          </div>
-          <div class="action col-lg-2 text-center dropdown">
-            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><i class="icon ion-android-settings"
-                style="font-size: 30px;color: #888888;"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex align-items-center mb-2">
-          <div class="cont-user-wrapper col-lg-3">
-            <div class="d-flex align-items-center  w-30">
-              <div class="name ml-3">
-                <span class="font-weight-bold">Leonie Adams</span>
-              </div>
-            </div>
-          </div>
-          <div class="email col-lg-3">
-            <p>Task Area</p>
-          </div>
-          <div class="role text-center col-lg-2">
-            <p>Duties</p>
-          </div>
-          <div class="status text-center col-lg-2">
-            <span class="badge badge-success p-2">Activated</span>
-          </div>
-          <div class="action col-lg-2 text-center dropdown">
-            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><i class="icon ion-android-settings"
-                style="font-size: 30px;color: #888888;"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex align-items-center mb-2">
-          <div class="cont-user-wrapper col-lg-3">
-            <div class="d-flex align-items-center  w-30">
-              <div class="name ml-3">
-                <span class="font-weight-bold">Phil McCravings</span>
-              </div>
-            </div>
-          </div>
-          <div class="email col-lg-3">
-            <p>Task Area</p>
-          </div>
-          <div class="role text-center col-lg-2">
-            <p>Duties</p>
-          </div>
-          <div class="status text-center col-lg-2">
-            <span class="badge badge-warning p-2">Deactivated</span>
-          </div>
-          <div class="action col-lg-2 text-center dropdown">
-            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><i class="icon ion-android-settings"
-                style="font-size: 30px;color: #888888;"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex align-items-center mb-2">
-          <div class="cont-user-wrapper col-lg-3">
-            <div class="d-flex align-items-center  w-30">
-              <div class="name ml-3">
-                <span class="font-weight-bold">Xavier Muchachos</span>
-              </div>
-            </div>
-          </div>
-          <div class="email col-lg-3">
-            <p>Task Area</p>
-          </div>
-          <div class="role text-center col-lg-2">
-            <p>Duties</p>
-          </div>
-          <div class="status text-center col-lg-2">
-            <span class="badge badge-success p-2">Activated</span>
-          </div>
-          <div class="action col-lg-2 text-center dropdown">
-            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><i class="icon ion-android-settings"
-                style="font-size: 30px;color: #888888;"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </li>
-        <li class="d-flex align-items-center mb-2">
-          <div class="cont-user-wrapper col-lg-3">
-            <div class="d-flex align-items-center  w-30">
-              <div class="name ml-3">
-                <span class="font-weight-bold">Sonny Day</span>
-              </div>
-            </div>
-          </div>
-          <div class="email col-lg-3">
-            <p>Task Area</p>
-          </div>
-          <div class="role text-center col-lg-2">
-            <p>Duties</p>
-          </div>
-          <div class="status text-center col-lg-2">
-            <span class="badge badge-success p-2">Activated</span>
-          </div>
-          <div class="action col-lg-2 text-center dropdown">
-            <a style="color: #888888;" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false"><i class="icon ion-android-settings"
-                style="font-size: 30px;color: #888888;"></i></a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-    <!-- 
-	<h1 class="text-center">Blog</h1>
-		<div class="row">
-			<div class="col-md-4 col-lg-4 col-sm-12">
-				<div class="card">
-					<div class="card-img">
-						<img src="images/posts/polit.jpg" class="img-fluid">
-					</div>
-					
-					<div class="card-body">
-					<h4 class="card-title">Post Title</h4>
-						<p class="card-text">
-							
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="" class="card-link">Read more</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-4 col-sm-12">
-				<div class="card">
-					<div class="card-img">
-						<img src="images/posts/images.jpg" class="img-fluid">
-					</div>
-					
-					<div class="card-body">
-					   <h4 class="card-title">Post Title</h4>
-						<p class="card-text">
-							
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="" class="card-link">Read more</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 col-lg-4 col-sm-12">
-				<div class="card">
-					<div class="card-img">
-						<img src="images/posts/imag2.jpg" class="img-fluid">
-					</div>
-					
-					<div class="card-body">
-					<h4 class="card-title">Post Title</h4>
-						<p class="card-text">
-							
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-					</div>
-					<div class="card-footer">
-						<a href="" class="card-link">Read more</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
    
--->
+	
 
 
     <!-- Optional JavaScript; choose one of the two! -->
