@@ -6,11 +6,13 @@ $(document).ready(function(){
 
 
 
+
    // Select the New Task Form
 const newTaskForm = document.querySelector('#taskForm');
 
 // Add an 'onsubmit' event listener
 newTaskForm.addEventListener('submit', (event) => {
+
     // Prevent default action
     event.preventDefault();
 
@@ -21,7 +23,6 @@ newTaskForm.addEventListener('submit', (event) => {
     const newDueDateInput = document.querySelector('#dueDate');
     const newStatusInput = document.querySelector('#status');
     const errorMessage = document.querySelector ('#errorMessage');
-    
     
     /*
         Validation code here
