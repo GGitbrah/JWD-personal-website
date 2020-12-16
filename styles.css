@@ -50,7 +50,8 @@ main {
     
     flex: 1;
     border-radius: 25px;
-    border: 10px solid #354f5e
+    border: 10px solid #354f5e;
+    
 }
 
 .task-summary {
