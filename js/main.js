@@ -1,10 +1,12 @@
-$(document).ready(function(){
-    $('.header').height($(window).height());
-    
-   })
+
+    import {TaskManager} from './taskmanager.js';
 
 
-
+//    document.addEventListener("DOMContentLoaded", function(event) {
+// //     // - Code to execute when all DOM content is loaded. 
+// //     // - including fonts, images, etc.
+//     document.querySelector(".header").style="height:100vh";
+// });
 
 
    // Select the New Task Form
@@ -12,7 +14,6 @@ const newTaskForm = document.querySelector('#taskForm');
 
 // Add an 'onsubmit' event listener
 newTaskForm.addEventListener('submit', (event) => {
-
     // Prevent default action
     event.preventDefault();
 
@@ -23,10 +24,6 @@ newTaskForm.addEventListener('submit', (event) => {
     const newDueDateInput = document.querySelector('#dueDate');
     const newStatusInput = document.querySelector('#status');
     const errorMessage = document.querySelector ('#errorMessage');
-    
-    /*
-        Validation code here
-    */
     
     
 
@@ -84,8 +81,15 @@ newTaskForm.addEventListener('submit', (event) => {
         
         console.log("valid");
     }
+    const newInstance = new TaskManager;
+
+    
+    // Add the task to the task manager
+     newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
+console.log(newInstance._tasks);
 });
 
-// function validFormFieldInput(data){
-//     return data !== null && data !== '';
-// }
+function validFormFieldInput(data){
+    return data !== null && data !== '';
+}
+
