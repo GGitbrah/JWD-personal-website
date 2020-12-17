@@ -1,15 +1,18 @@
 //Task 6 create a new function createTaskHtml
 function createTaskHtml(name, description, assignTo,dueDate, status){
-    const html = `<div class="card">
-    <div class="card-body">
-      <h5 class="card-title">${name}</h5>
-      <p class="card-text">${description}</p>
-      <p class="card-text">${assignTo}</p>
-      <p class="card-text">${dueDate}</p>
-      <span class="badge" style="background-color:#354f5e; color:white;"">${status}</span>
-      <a href="#" class="btn" style=background-color:#ef9c50;>Delete</a>
+    const html = `<div class="card-columns">
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">${description}</p>
+        <p class="card-text">${assignTo}</p>
+        <p class="card-text">${dueDate}</p>
+        <span class="badge" style="background-color:#354f5e; color:white;"">IN PROGRESS</span>
+        <a href="#" class="btn" style=background-color:#ef9c50;>Delete</a>
+      </div>
     </div>
-  </div>`
+    </div>`
   return html;
 };
 

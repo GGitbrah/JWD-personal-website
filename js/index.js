@@ -1,4 +1,9 @@
 import {TaskManager} from './taskManager.js';
+const newInstance = new TaskManager(0);
+
+    
+    
+    
 
 // Select the New Task Form
 const newTaskForm = document.querySelector('#taskForm');
@@ -80,15 +85,12 @@ newTaskForm.addEventListener('submit', (event) => {
 
     //sprint 2
 //initialise new instanace of taskmanager
-    const newInstance = new TaskManager;
-
-    
-    // Add the task to the task manager
-    newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
     
     // check on tasks being added???????
     console.log(newInstance._tasks);
-
+    
+// Add the task to the task manager
+newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
    
     // Render the tasks
     newInstance.render()
