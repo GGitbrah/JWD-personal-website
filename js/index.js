@@ -95,3 +95,9 @@ console.log(newInstance._tasks);
 function validFormFieldInput(data){
     return data !== null && data !== '';
 }
+
+//Task 6 Display the tasks
+// const taskHtml = createTaskHtml('kitchen','wash floor','leonie','22/10/2020','To do');
+
+
+// console.log(taskHtml);
