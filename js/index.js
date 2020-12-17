@@ -84,9 +84,21 @@ newTaskForm.addEventListener('submit', (event) => {
 
     
     // Add the task to the task manager
-     newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
-console.log(newInstance._tasks);
+    newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
+    
+    // check on tasks being added???????
+    console.log(newInstance._tasks);
 
+TaskManager.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
+
+    // Render the tasks
+    TaskManager.render()
+
+    newNameInput.value = '';
+    newDescriptionInput.value = '';
+    newAssignToInput.value = '';
+    newDueDateInput.value = '';
+    
 
 });
 

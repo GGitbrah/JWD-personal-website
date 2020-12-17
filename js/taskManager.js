@@ -53,7 +53,20 @@ export class TaskManager {
           const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 
           // create a taskHtml variable to store the HTML of the current task by calling the createTaskHtml function and using the properties of the current task
-          const
+          
+            // Create the task html
+          const taskHtml = createTaskHtml(task.name, task.description, task.assignTo, formattedDate, task.status);
+
+          // Push it to the tasksHtmlList array
+          tasksHtmlList.push(taskHtml);
+          }
+          // Create the tasksHtml by joining each item in the tasksHtmlList
+        // with a new line in between each item.
+        const tasksHtml = tasksHtmlList.join('\n');
+
+        // Set the inner html of the tasksList on the page
+        const tasksList = document.querySelector('#tasksList');
+        tasksList.innerHTML = tasksHtml;
       };
 } 
 
