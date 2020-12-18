@@ -1,6 +1,6 @@
 
     import {TaskManager} from './taskmanager.js';
-
+    const newInstance = new TaskManager(0);
 
 //    document.addEventListener("DOMContentLoaded", function(event) {
 // //     // - Code to execute when all DOM content is loaded. 
@@ -25,7 +25,10 @@ newTaskForm.addEventListener('submit', (event) => {
     const newStatusInput = document.querySelector('#status');
     const errorMessage = document.querySelector ('#errorMessage');
     
-    
+    function myFunction() {
+        alert('#errorMessage');
+    }
+
 
     // Get the values of the inputs
     const taskName = newNameInput.value;
@@ -33,7 +36,7 @@ newTaskForm.addEventListener('submit', (event) => {
     const taskAssignTo = newAssignToInput.value;
     const taskDueDate = newDueDateInput.value;
     const taskStatus = newStatusInput.value;
-    console.log (taskAssignTo);
+    // console.log (taskAssignTo);
 
 
     if(taskName === "" || taskName=== undefined || taskName === null)
@@ -81,12 +84,23 @@ newTaskForm.addEventListener('submit', (event) => {
         
         console.log("valid");
     }
-    const newInstance = new TaskManager;
+
+   // check on tasks being added???????
+   console.log(newInstance._tasks);
+    
 
     
     // Add the task to the task manager
      newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
-console.log(newInstance._tasks);
+
+    // Render the tasks
+    newInstance.render()
+
+    newNameInput.value = '';
+    newDescriptionInput.value = '';
+    newAssignToInput.value = '';
+    newDueDateInput.value = '';
+ 
 });
 
 function validFormFieldInput(data){

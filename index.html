@@ -34,9 +34,9 @@
                   <div class="text-container">
                         <!-- <div class="description"> -->
             <h1>    Hello ,Welcome To FlatBuddies!
-             <p>    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             <p>    Add a Task!
          </p>   
-          <button class="btn btn-outline-secondary btn-lg">See more</button>   </h1>  
+          <button class="btn btn-outline-secondary btn-lg">+ Task</button>   </h1>  
              <!-- </div> end of description -->
           </div> <!-- end of text-container -->
         </div>  <!-- end of col -->
@@ -83,13 +83,12 @@
                   <textarea class="form-control" rows="5" id="description" name="description"></textarea>
                 </div>
 
-
-                   <!--Input for due date of activity-->
-
+                <!--Input for due date of activity-->
                 <div class="form-group"> <!-- Date input -->
                   <label class="control-label" for="dueDate">Date:</label>
-                  <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYY" type="text"/>
-                </div>
+                  <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYY" type="date"/>
+              </div>
+
 
                      <!--input for status. Select type is used for the different Status options (TODO, IN PROGRESS, REVIEW, DONE). -->
                   
@@ -105,10 +104,10 @@
 
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <div id="errorMessage">
-                </div>
+              <div id="errorMessage">
             </div>
         </div>
+    </div>
 </div>
 </section>
 
@@ -121,85 +120,47 @@
       <h4 class="text-red">Flatmates</h4>
     </div>
 
-    <div class="container">
-      <div class="row border border-primary">
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">                
-              <div class="card-body">
-                  <h5 class="card-title">Task 2</h5>
-                  <p class="card-text">task 2 description</p>
-                  <p class="card-text">Santiago Carrillo</p>
-                  <p class="card-text">Due Date: Sep 20 - 2020</p>
-                  <span class="badge badge-success">DONE</span>
-                  <a href="#" class="btn btn-primary">Delete</a>
-              </div>
-          </div>
-          </div> 
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">                
-              <div class="card-body">
-                  <h5 class="card-title">Task 2</h5>
-                  <p class="card-text">task 2 description</p>
-                  <p class="card-text">Santiago Carrillo</p>
-                  <p class="card-text">Due Date: Sep 20 - 2020</p>
-                  <span class="badge badge-success">DONE</span>
-                  <a href="#" class="btn btn-primary">Delete</a>
-              </div>
-          </div>
-          </div>
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">                
-              <div class="card-body">
-                  <h5 class="card-title">Task 2</h5>
-                  <p class="card-text">task 2 description</p>
-                  <p class="card-text">Santiago Carrillo</p>
-                  <p class="card-text">Due Date: Sep 20 - 2020</p>
-                  <span class="badge badge-success">DONE</span>
-                  <a href="#" class="btn btn-primary">Delete</a>
-              </div>
-          </div>
-          </div>
-      </div>
-      <div class="row border border-primary">
-          <div class="col-sm">
-            <div class="card" style="width: 18rem;">                
-              <div class="card-body">
-                  <h5 class="card-title">Task 2</h5>
-                  <p class="card-text">task 2 description</p>
-                  <p class="card-text">Santiago Carrillo</p>
-                  <p class="card-text">Due Date: Sep 20 - 2020</p>
-                  <span class="badge badge-success">DONE</span>
-                  <a href="#" class="btn btn-primary">Delete</a>
-              </div>
-          </div>
-          </div> 
-          <div class="col-sm"><div class="card" style="width: 18rem;">                
+    <!--cards that show tasks for a person-->
+      <ul id = "tasksList">
+        <div class="card-columns">
+          <div class="card">
+
             <div class="card-body">
-                <h5 class="card-title">Task 2</h5>
-                <p class="card-text">task 2 description</p>
-                <p class="card-text">Santiago Carrillo</p>
-                <p class="card-text">Due Date: Sep 20 - 2020</p>
-                <span class="badge badge-success">DONE</span>
-                <a href="#" class="btn btn-primary">Delete</a>
+              <h5 class="card-title">Kitchen</h5>
+              <p class="card-text">Mop the floor</p>
+              <p class="card-text">Santiago Carrillo</p>
+              <p class="card-text">Due Date: Oct 15 - 2020</p>
+              <span class="badge" style="background-color:#354f5e; color:white;"">IN PROGRESS</span>
+              <a href="#" class="btn" style=background-color:#ef9c50;>Delete</a>
             </div>
-        </div>
+          </div>
+      </ul>     
+    </section>
+
+        <!-- <div class="row">
+          <div class="col">
+             <h2>Tasks</h2>
+               <ul class="list-group" id="tasksList">
+                  <li class="list-group-item">
+                  <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                  <h5>Take out trash</h5>
+                  <span class="badge badge-danger">TODO</span>
+                  </div>
+                  <div class="d-flex w-100 mb-3 justify-content-between">
+                      <small>Assigned To: Nick</small>
+                      <small>Due: 20/09/2020</small>
+                  </div>
+                  <p>Take out the trash to the front of the house</p>
+                  </li>
+                </ul>
       </div>
-          <div class="col-sm"><div class="card" style="width: 18rem;">                
-            <div class="card-body">
-                <h5 class="card-title">Task 2</h5>
-                <p class="card-text">task 2 description</p>
-                <p class="card-text">Santiago Carrillo</p>
-                <p class="card-text">Due Date: Sep 20 - 2020</p>
-                <span class="badge badge-success">DONE</span>
-                <a href="#" class="btn btn-primary">Delete</a>
-            </div>
-        </div>
-      </div>
-      </div>
+    </div>
+      <div class="col"></div>
+    </div>
 </div>
-  </div>
-</div>
-</section>
+ -->
+
+   
 
    
 	
