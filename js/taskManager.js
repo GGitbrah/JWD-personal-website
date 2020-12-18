@@ -15,7 +15,6 @@ function createTaskHtml(name, description, assignTo,dueDate, status){
   return html;
 };
 
-
 // Create a TaskManager class
 export class TaskManager {
     constructor(currentId = 0) {
@@ -25,50 +24,47 @@ export class TaskManager {
     // get tasks() {
     //     return console.log(this._tasks);
     //   }
-
-// method addTask accepts all the nessecary information 
-// from the form to create a task as parameters. 
-    addTask(name, description, assignTo, dueDate) {
-        const task = {
-            // Increment the currentId property
-            id: this.currentId++,
-            name: name,
-            description: description,
-            assignTo: assignTo,
-            dueDate: dueDate,
-            status: 'TODO'
-        }
-    
-
+  
+      addTask(name, description, assignTo, dueDate) {
+            const task = {
+                // Increment the currentId property
+                id: this.currentId++,
+                name: name,
+                description: description,
+                assignTo: assignTo,
+                dueDate: dueDate,
+                status: 'TODO'
+            }
+        
+        
             // Push the task to the tasks property
             this._tasks.push(task);
-            }     
-            
+            } 
+
             // display the tasks by creating a render method
-        render(){
-            const tasksHtmlList=[];
+      render(){
+        const tasksHtmlList=[];
 
-
-            // Loop over our tasks and create the html, storing it in the array
+        // Loop over our tasks and create the html, storing it in the array
         for (let i = 0; i < this._tasks.length; i++) {
-            // Get the current task in the loop
-            const task = this._tasks[i];
+          // Get the current task in the loop
+          const task = this._tasks[i];
 
-            // Format the date
+          // Format the date
           const date = new Date(task.dueDate);
           const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
 
-             // Create the task html
-          const taskHtml = createTaskHtml(task.name, task.description, task.assignTo, formattedDate, task.status);
+          // create a taskHtml variable to store the HTML of the current task by calling the createTaskHtml function and using the properties of the current task
           
-           // Push it to the tasksHtmlList array
-          tasksHtmlList.push(taskHtml);
-        }
+            // Create the task html
+          const taskHtml = createTaskHtml(task.name, task.description, task.assignTo, formattedDate, task.status);
 
-         // Create the tasksHtml by joining each item in the tasksHtmlList
+          // Push it to the tasksHtmlList array
+          tasksHtmlList.push(taskHtml);
+          }
+          // Create the tasksHtml by joining each item in the tasksHtmlList
         // with a new line in between each item.
         const tasksHtml = tasksHtmlList.join('\n');
-
 
         // Set the inner html of the tasksList on the page
         const tasksList = document.querySelector('#tasksList');
