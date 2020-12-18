@@ -109,3 +109,4 @@
    function validFormFieldInput(data){
        return data !== null && data !== '';
    }
+

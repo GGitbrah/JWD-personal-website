@@ -24,7 +24,7 @@ export class TaskManager {
     // get tasks() {
     //     return console.log(this._tasks);
     //   }
-
+  
       addTask(name, description, assignTo, dueDate) {
             const task = {
                 // Increment the currentId property
