@@ -1,5 +1,5 @@
 
-  import {TaskManager} from './taskManager_copy.js';
+  import {TaskManager} from './taskManager.js';
   const newInstance = new TaskManager(0);
       
   
