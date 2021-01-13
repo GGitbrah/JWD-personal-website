@@ -1,6 +1,8 @@
 
   import {TaskManager} from './taskManager.js';
   const newInstance = new TaskManager(0);
+  newInstance.load();
+  newInstance.render();
       
   
   // Select the New Task Form
@@ -88,8 +90,8 @@
       console.log(newInstance._tasks);
       
   // Add the task to the task manager
-  newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
-     
+    newInstance.addTask(taskName, taskDescription, taskAssignTo, taskDueDate);
+      newInstance.storetodoListinLocalStorage()
       // Render the tasks
       newInstance.render()
   
@@ -122,12 +124,16 @@ tasksList.addEventListener('click', (event) => {
 
        // Get the task from the TaskManager using the taskId
        const task = newInstance.getTaskById(taskId);
-   console.log(parentTask)
-   console.log(parentTask.dataset.taskId)
+        /* console.log(parentTask)
+        console.log(parentTask.dataset.taskId)
        console.log(taskId)
-       console.log(task)
+       console.log(task) */
+       
        // Update the task status to 'DONE'
        task.status = 'DONE';
+
+       //save the tasks to localStorage
+       newInstance.save();
 
        // Render the tasks
        newInstance.render();
