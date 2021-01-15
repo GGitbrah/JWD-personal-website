@@ -1,26 +1,26 @@
-//Task 6 create a new function createTaskHtml
-const createTaskHtml = (id, name, description, assignTo, dueDate, status) => `
-  <li class="list-group-item" data-task-id=${id}>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">${name}</h5>
-      <p class="card-text">${description}</p>
-      <p class="card-text">${assignTo}</p>
-      <p class="card-text">${dueDate}</p>
-      <span class="badge" style="background-color:#354f5e; color:white;"">${status}</span>
-      <a href="#" class="btn delete-button" style=background-color:#ef9c50;>Delete</a>
-      <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+  //Task 6 create a new function createTaskHtml
+  const createTaskHtml = (id, name, description, assignTo, dueDate, status) => `
+    <li class="list-group-item" data-task-id=${id}>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">${description}</p>
+        <p class="card-text">${assignTo}</p>
+        <p class="card-text">${dueDate}</p>
+        <span class="badge" style="background-color:#354f5e; color:white;"">${status}</span>
+      <button class="btn btn-outline-danger delete-button">Delete</button>
+        <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+      </div>
     </div>
-  </div>
-  </li>
-`;
-
+    </li>
+  `;
 
 // Create a TaskManager class
-export class TaskManager {
+// turn OFF export when running test in Terminal
+class TaskManager {
   constructor(currentId = 0) {
       this._tasks = [];
-      this._currentId = currentId;
+      this.currentId = currentId;
   }
   // get tasks() {
   //     return console.log(this._tasks);
@@ -29,7 +29,7 @@ export class TaskManager {
     addTask(name, description, assignTo, dueDate) {
           const task = {
               // Increment the currentId property
-              id: this._currentId++,
+              id: this.currentId++,
               name: name,
               description: description,
               assignTo: assignTo,
@@ -42,6 +42,27 @@ export class TaskManager {
           this._tasks.push(task);
           } 
 
+   //  Create the deleteTask method
+    deleteTask(taskId) {
+      console.log("hello")
+      // Create an empty array and store it in a new variable, newTasks
+      const newTasks = [];
+
+      // Loop over the tasks
+      for (let i = 0; i < this._tasks.length; i++) {
+          // Get the current task in the loop
+          const task = this._tasks[i];
+
+          // Check if the task id is not the task id passed in as a parameter
+          if (task.id !== taskId) {
+              // Push the task to the newTasks array
+              newTasks.push(task);
+          } 
+      }
+      this._tasks = newTasks;
+    }
+
+// Geting the Task by ID
           getTaskById(taskId) {
               // Create a variable to store the found task
               let foundTask;
@@ -79,6 +100,7 @@ export class TaskManager {
         // create a taskHtml variable to store the HTML of the current task by calling the createTaskHtml function and using the properties of the current task
         
           // Create the task html
+          console.log(task.id)
         const taskHtml = createTaskHtml(task.id, task.name, task.description, task.assignTo, formattedDate, task.status);
 
         // Push it to the tasksHtmlList array
@@ -108,7 +130,7 @@ let lists;
 //get lists out of localStorage and parse into JS array
 //If localStorage is empty, assign lists to empty array
 if (localStorage.getItem('lists') === null) {
-lists = [];
+lists = []; //set to empty array if there is no lists
 
 } else {
    lists = JSON.parse(localStorage.getItem('lists'));
@@ -147,7 +169,7 @@ const tasksJson = JSON.stringify(this._tasks)
 
 //Put new array back into localStorage (parse into string first)
 localStorage.setItem('tasks', tasksJson);
-localStorage.setItem('currentID', String(this._currentId));
+localStorage.setItem('currentID', String(this.currentId));
 console.log('data added to local storage');
 }
 
@@ -169,14 +191,15 @@ load() {
       const currentId = localStorage.getItem('currentId');
 
       // Convert the currentId to a number and store it in our TaskManager
-      this._currentId = Number(currentId);
-      console.log(this._currentId);
+      this.currentId = Number(currentId);
+      console.log(this.currentId);
     }
   }
 
 }
+//==========Turn Off when using browser, On when testing==========//
 
-
+// module.exports = TaskManager;
 
 
   

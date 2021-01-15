@@ -1,5 +1,4 @@
 
-  import {TaskManager} from './taskManager.js';
   const newInstance = new TaskManager(0);
   newInstance.load();
   newInstance.render();
@@ -36,7 +35,7 @@
       const taskStatus = newStatusInput.value;
       // console.log(taskAssignTo);
   
-  
+      //Validate the input values
       if (taskName === "" || taskName === undefined || taskName === null) {
           errorMessage.innerHTML += "Invalid task name input";
           errorMessage.style.display = "block";
@@ -84,7 +83,7 @@
       }
   
       //sprint 2
-  //initialise new instanace of taskmanager
+  //initialise new instance of taskmanager
       
       // check on tasks being added???????
       console.log(newInstance._tasks);
@@ -112,28 +111,53 @@
   // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
 
+tasksList.addEventListener('click', (event) => {
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+ 
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+ 
+        // Get the task from the TaskManager using the taskId
+        const task = newInstance.getTaskById(taskId);
+         /* console.log(parentTask)
+         console.log(parentTask.dataset.taskId)
+        console.log(taskId)
+        console.log(task) */
+        
+        // Update the task status to 'DONE'
+        task.status = 'DONE';
+ 
+        //save the tasks to localStorage
+        newInstance.storetodoListinLocalStorage();
+ 
+        // Render the tasks
+        newInstance.render();
+    }
+ });
+ //========DELETE FUNCTION=========================//
+
 // Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener('click', (event) => {
+    console.log("button was clicked")
    // Check if a "Mark As Done" button was clicked
-   if (event.target.classList.contains('done-button')) {
+   if (event.target.classList.contains('delete-button')) {
+       console.log("if statement Done button")
        // Get the parent Task
        const parentTask = event.target.parentElement.parentElement.parentElement;
 
        // Get the taskId of the parent Task.
        const taskId = Number(parentTask.dataset.taskId);
-
+        console.log("taskid is" + taskId)
        // Get the task from the TaskManager using the taskId
-       const task = newInstance.getTaskById(taskId);
-        /* console.log(parentTask)
-        console.log(parentTask.dataset.taskId)
-       console.log(taskId)
-       console.log(task) */
        
-       // Update the task status to 'DONE'
-       task.status = 'DONE';
+
+        newInstance.deleteTask(taskId)
 
        //save the tasks to localStorage
-       newInstance.save();
+       newInstance.storetodoListinLocalStorage();
 
        // Render the tasks
        newInstance.render();
