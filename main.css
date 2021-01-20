@@ -1,0 +1,63 @@
+
+.navbar{ background:#F97300;}
+
+.nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
+
+.nav-link{ margin-right: 1em !important;}
+
+.nav-link:hover{ background: #f4f4f4; color: #f97300; }
+
+.navbar-collapse{ justify-content: flex-end;}
+
+.navbar-toggler{  background:#fff !important;}
+
+
+
+  /*header style*/
+  .header {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    background: url(../img/2.jpg) center center no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+   }
+
+   .header h1 {
+     position: fixed;
+     left: 0;
+     color: #F97300;
+   }
+
+
+.description{
+    position: absolute;
+    left: 60px;
+    top: 30%;
+    margin: auto;
+    border: 3px solid #080807;
+    padding: 2em;
+}
+  .description h1{
+  color:#F97300 ;
+}
+
+.   description p{
+    color:#666;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+   }
+   .description button{
+    border:1px  solid #F97300;
+    background:#F97300;
+    color:#fff;
+   }
+
+
+  .section{
+    background-color: #F97300;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+   }
