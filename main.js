@@ -11,6 +11,7 @@
   newTaskForm.addEventListener('submit', (event) => {
       // Prevent default action i.e. do not refresh screen
       event.preventDefault();
+
   
       // Select the inputs from the name attribute
       const newAssignToInput = document.querySelector('#assignTo');
@@ -18,11 +19,7 @@
       const newDescriptionInput = document.querySelector('#description');
       const newDueDateInput = document.querySelector('#dueDate');
       const newStatusInput = document.querySelector('#status');
-      //const errorMessage = document.querySelector('#errorMessage');
-
-  
       
-  
   
   
       // Get the values of the inputs
@@ -37,8 +34,7 @@
       var errorMessage ='';
 
         if (taskAssignTo === "" || taskAssignTo === undefined || taskAssignTo === null) {
-          errorMessage += "Invalid name input";
-          //errorMessage.style.display = "block";
+          errorMessage += "Please enter your name,";
           console.log("invalid");
   
       } else {
@@ -47,8 +43,7 @@
       }
 
       if (taskName === "" || taskName === undefined || taskName === null) {
-          errorMessage += " Invalid task name input";
-          //errorMessage.style.display = "block";
+          errorMessage += " select area to clean,";
           console.log("invalid");
       } else {
   
@@ -56,8 +51,7 @@
       }
   
       if (taskDescription === "" || taskDescription === undefined || taskDescription === null) {
-          errorMessage += "  Invalid description of task input";
-          //errorMessage.style.display = "block"
+          errorMessage += " describe task,";
           console.log("invalid");
       } else {
   
@@ -65,8 +59,7 @@
       }
     
       if (taskDueDate === "" || taskDueDate === undefined || taskDueDate === null) {
-          errorMessage += " Invalid date input";
-          //errorMessage.style.display = "block";
+          errorMessage += "  list due date,";
           console.log("invalid");
       } else {
   
@@ -74,8 +67,7 @@
       }
   
       if (taskStatus === "" || taskStatus === undefined || taskStatus === null) {
-          errorMessage += " Please select status";
-          //errorMessage.style.display = "block";
+          errorMessage += " select status.";
           console.log("invalid");
       } else {
   
@@ -83,13 +75,19 @@
       }
                 
         console.log(errorMessage)
+        if(errorMessage ===''){
+            newInstance.addTask(taskAssignTo, taskName, taskDescription, taskDueDate, taskStatus);
+            newInstance.storetodoListinLocalStorage()
+         // Render the tasks
+            newInstance.render()
+        }else{
+            alert(errorMessage)
+        }
+        
 
-         alert(errorMessage);
+         
 
-  /*so you'll need to change errorMessage.innerhtml into a variable that will store the string :slightly_smiling_face: so you should define an empty string BEFORE any validations called var alertMessage (eg. underneath where you have all your queryselectors), and then you can use this code:
-alertMessage += "Please select status" for each validation 'if' statement, and then in your alert, you would pass in that variable as such : alert(alertMessage);
-This is because, errorMessage is referring to an element - you can't alert a user of a html element. It has to be a string :slightly_smiling_face:*/
-
+ 
       //sprint 2
   //initialise new instance of taskmanager
       
@@ -97,10 +95,7 @@ This is because, errorMessage is referring to an element - you can't alert a use
       console.log(newInstance._tasks);
       
   // Add the task to the task manager
-    newInstance.addTask(taskAssignTo, taskName, taskDescription, taskDueDate, taskStatus);
-      newInstance.storetodoListinLocalStorage()
-      // Render the tasks
-      newInstance.render()
+    
   
       newAssignToInput.value = '';
       newNameInput.value = '';
@@ -119,8 +114,12 @@ This is because, errorMessage is referring to an element - you can't alert a use
   // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
 
+//==================mark as done button===================
+
+//add an onclick event listener to done-button
 tasksList.addEventListener('click', (event) => {
-    // Check if a "Mark As Done" button was clicked
+    console.log('done button was clicked')
+    // Check if a "done" button was clicked
     if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement;
@@ -147,9 +146,9 @@ tasksList.addEventListener('click', (event) => {
  });
  //========DELETE FUNCTION=========================//
 
-// Add an 'onclick' event listener to the Tasks List
+// Add an 'onclick' event listener to the delete button
 tasksList.addEventListener('click', (event) => {
-    console.log("button was clicked")
+    console.log("delete button was clicked")
    // Check if a "Mark As Done" button was clicked
    if (event.target.classList.contains('delete-button')) {
        console.log("if statement Done button")
