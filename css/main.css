@@ -121,6 +121,14 @@ section:nth-child(3){
 h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 10px;
-    text-shadow: 1px 1px black;
     font-size: 1rem;
+    padding: 5px 0px 5px 0px; 
+    color: black;
+    background-color: #f4f4f4;
+    margin-right: 5px;
+}
+
+.list-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
 }
