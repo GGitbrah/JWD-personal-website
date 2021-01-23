@@ -1,0 +1,134 @@
+*, ::before, ::after{  /* check */
+    box-sizing: border-box; /* check */
+}
+
+body{
+    position: relative; /* check */
+    margin: 0;
+    overflow: hidden; /* check */
+    display: flex; 
+    height: 100vh; /* check */
+    flex-direction: column;
+    line-height: 1.5;  /* check */
+    font-family: tahoma;
+    font-size: 60%;
+    color: #f4f4f4;
+    background-color: #1d1e22;
+}
+
+.scrolls{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.25em;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    color: #f4f4f4;
+}
+
+.scrolls .center{
+    font-size: 0.825rem;
+}
+
+.smooth{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
+.navbar {
+text-transform: uppercase;
+font-weight: 700;
+font-size: 0.9rem;
+letter-spacing: 0.1rem;
+background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.navbar-brand img {
+height: 2rem;
+}
+
+.navbar-nav li {
+padding-right: 0.7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+color: white;
+padding-top: 0.8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+color: #1EBBA3;
+}
+
+section{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-grow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background-image: url(../img/QZ124-Windsor-Grey5.jpg);
+    background-size: cover;
+    scroll-snap-align: center;
+}
+
+section:nth-child(2){
+    background-image: url(../img/2.jpg);
+}
+
+section:nth-child(3){
+    background-image: url(../img/Dark-Grey.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.caption h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.8rem;
+    font-weight: 400;
+    text-shadow: .1rem .1rem .8rem black;
+    padding-bottom: 1rem;
+}
+
+.task-heading{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.form{
+    padding-bottom: 5px;
+}
+
+.form-box{
+    padding-top: 30px;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 10px;
+    font-size: 1rem;
+    padding: 5px 0px 5px 0px; 
+    color: black;
+    background-color: #f4f4f4;
+    margin-right: 5px;
+}
+
+.list-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
