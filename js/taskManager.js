@@ -1,16 +1,16 @@
  //Task 6 create a new function createTaskHtml
  const createTaskHtml = (id, assignTo,name, description, dueDate, status) => `
  <li class="list-group-item" data-task-id=${id}>
- <div class="card border-dark text-left">
+ <div class="card">
    <div class="card-body">
-     <h5 class="list-text">Name: ${assignTo}</h5> 
-     <p class="list-text">Area: ${name}</p>
-     <p class="list-text">Task description: ${description}</p>
-     <p class="list-text">Date: ${dueDate}</p>
-     <span class="badge" style="background-color:#FF8C00; color:white; padding:13px"">${status}</span>
-     <button class="btn btn-outline-danger delete-button">Delete</button>
-     <button class="btn btn-outline-success done-button ${status !== 'Done'? 'visible' : 'invisible'}">Mark As Done</button>
-  </div>
+     <h5 class="card-text">Name: ${assignTo}</h5>
+     <p class="card-title">Area: ${name}</p>
+     <p class="card-text">Duty description: ${description}</p>
+     <p class="card-text">Date: ${dueDate}</p>
+     <span class="badge">${status}</span>
+   <button class="btn btn-outline-danger delete-button">Delete</button>
+     <button class="btn btn-outline-success done-button ${status !== 'DONE' ? 'visible' : 'invisible'}">Mark As Done</button>
+   </div>
  </div>
  </li>
 `;

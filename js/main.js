@@ -75,7 +75,7 @@ const newInstance = new TaskManager(0);
                 
         console.log(errorMessage)
         if(errorMessage ===''){
-            newInstance.addTask(taskAssignTo, taskName, taskDescription, taskDueDate, taskStatus);
+            newInstance.addTask(taskAssignTo, taskName, taskDescription, taskDueDate, taskStatus.toUpperCase());
             newInstance.storetodoListinLocalStorage()
          // Render the tasks
             newInstance.render()

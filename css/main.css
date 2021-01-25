@@ -132,3 +132,19 @@ h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
 }
+
+#tasksList{
+    color: black
+}
+
+.card {
+    display: inline-block;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.badge {
+    background-color:#FF8C00; 
+    color:white; 
+    padding:13px
+}
