@@ -30,7 +30,10 @@ const newInstance = new TaskManager(0);
       // console.log(taskAssignTo);
   
       //Validate the input values
-      var errorMessage ='';
+            var varDate = new Date(taskDueDate); //dd-mm-YYYY
+            var today = new Date();
+            today.setHours(0,0,0,0);
+            var errorMessage ='';
 
         if (taskAssignTo === "" || taskAssignTo === undefined || taskAssignTo === null) {
           errorMessage += "Please enter your name,";
@@ -64,7 +67,18 @@ const newInstance = new TaskManager(0);
   
           console.log("valid");
       }
-  
+
+        
+      //check that date is equal to or greater than the date the task is entered.
+       if (varDate <= today) {
+        errorMessage += "  cannot have  date earlier than todays date";
+        console.log("invalid");
+
+    } else {
+        console.log("valid");
+    }
+
+
       if (taskStatus === "" || taskStatus === undefined || taskStatus === null) {
           errorMessage += " select status.";
           console.log("invalid");
