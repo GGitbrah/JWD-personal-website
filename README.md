@@ -15,5 +15,6 @@ Step 2: Either mark as ‘complete’ or ‘delete’ or both.
 
 ## Links
 ![github site](http://www.google.com.au "FlatmateDuties")
+[GitHub](http://github.com)
 
 
