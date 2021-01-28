@@ -6,12 +6,12 @@ As data is retained in local storage, tasks are not accessible from other device
 Everything you need is in the respository. Just clone the entire site to your PC
 
 ## Instructions
-Step 1: Populate the form and submit
-	Note 1: If form is not complete, it will not submit.
-	Note 2: If date selected earlier than present date, it will not submit.
-Step 2: Either mark as ‘complete’ or ‘delete’ or both.
-	If ‘Complete’ is selected, the task will still appear on the screen.
-	If ‘Delete’ is selected, the task will disappear from the screen.
+* Step 1: Populate the form and submit
+	* Note 1: If form is not complete, it will not submit.
+	* Note 2: If date selected earlier than present date, it will not submit.
+* Step 2: Either mark as ‘complete’ or ‘delete’ or both.
+	* If ‘Complete’ is selected, the task will still appear on the screen.
+	* If ‘Delete’ is selected, the task will disappear from the screen.
 
 ## Links
 [GitHub site](https://ggitbrah.github.io/JWD-personal-website/)
