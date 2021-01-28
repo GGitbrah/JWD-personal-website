@@ -14,4 +14,4 @@ Everything you need is in the respository. Just clone the entire site to your PC
 	* If ‘Delete’ is selected, the task will disappear from the screen.
 
 ## Links
-[GitHub site](https://ggitbrah.github.io/JWD-personal-website/)
+[FlatmateDuties - Live Preview](https://ggitbrah.github.io/JWD-personal-website/)
