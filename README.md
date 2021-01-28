@@ -14,4 +14,4 @@ Step 2: Either mark as ‘complete’ or ‘delete’ or both.
 	If ‘Delete’ is selected, the task will disappear from the screen.
 
 ## Links
-[GitHub site](https://github.com/GGitbrah/JWD-personal-website/)
+[GitHub site](https://ggitbrah.github.io/JWD-personal-website/)
