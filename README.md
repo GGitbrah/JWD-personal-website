@@ -14,6 +14,6 @@ Step 2: Either mark as ‘complete’ or ‘delete’ or both.
 	If ‘Delete’ is selected, the task will disappear from the screen.
 
 ## Links
-![github site](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![github site](https://ggitbrah.github.io/JWD-personal-website/ "FlatmateDuties")
 
 
