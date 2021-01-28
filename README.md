@@ -14,5 +14,4 @@ Step 2: Either mark as ‘complete’ or ‘delete’ or both.
 	If ‘Delete’ is selected, the task will disappear from the screen.
 
 ## Links
-![github site](http://www.google.com.au "FlatmateDuties")
 [GitHub site](https://github.com/GGitbrah/JWD-personal-website/)
